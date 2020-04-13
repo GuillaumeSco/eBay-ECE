@@ -1,0 +1,40 @@
+.item{
+	display: block;
+	margin-top:20px;
+	background-color: #bbbbbb;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	height: 250px;
+	width: 1000px;
+	z-index: 1;
+
+	position: absolute;
+	left : 150px;
+
+}
+
+
+.item .left{
+	background-color: black;
+	float:left;
+	width: 250px;
+	height: 210px;
+}
+.item .middle{
+	float:left;
+	background-color: grey;
+	width:460px;
+	color: #3c6382;
+	height: 200px;
+}
+.item .right{
+	border-left: solid;
+	border-width: 2px:
+	border-color: #808080; 
+	float:left;
+	background-color: red;
+	width: 200px;
+	color: #3c6382;
+	height: 210px;
+}
