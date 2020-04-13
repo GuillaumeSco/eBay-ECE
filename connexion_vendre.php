@@ -21,6 +21,8 @@ if (isset($_POST['button1'])) {
 				echo "Pseudo : " . $data['Pseudo'] . "<br>";
 				echo "Email : " . $data['Email'] . "<br>";
 				echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
+				// header('Location: vendre2.html');
+
 				
 			}
 		}
@@ -29,5 +31,21 @@ if (isset($_POST['button1'])) {
 	}
 }
 //fermer la connexion
-mysqli_close($db_handle);
+//mysqli_close($db_handle);
+echo "Database close";
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ECE Ebay</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+			
+	<h2>Connecté</h2>
+	 <h1>Bienvenue <?php echo $pseudo; ?> !</h1>
+
+	
+</body>
+</html>
