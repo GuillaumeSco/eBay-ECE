@@ -76,6 +76,7 @@
 .menu .titre:hover .sous_menu{
 	visibility: visible;
 	height: auto;
+	transform: scaleY(1);
 }
 
 .menu .sous_menu li{
