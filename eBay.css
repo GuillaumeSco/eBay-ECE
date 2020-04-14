@@ -115,3 +115,9 @@ background-color: #FFFFFF;
 	width: auto;
 
 }
+
+#footer { 
+font-size: .60em;
+font-style: italic;
+padding-bottom: 100px;
+}
