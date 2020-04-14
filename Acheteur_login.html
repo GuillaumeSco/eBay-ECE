@@ -21,8 +21,7 @@
 </head>
 <body>
 
-	<form action="connexion_vendre.php" method="post">
-	<a href="index.html">retour</a>
+	<form action="connexion_compte.php" method="post">
 	
 	<div class="login">
 		<div class="login-screen">
@@ -34,9 +33,17 @@
 			</div>
 
 			<div class="login-form">
+
 				<div class="control-group">
 
-				<input type="text" class="login-field" value="" placeholder="pseudo" id="login-name" name="pseudo">
+				<input type="text" class="login-field" value="" placeholder="nom" id="login-name" name="nom">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+
+				</div>
+
+				<div class="control-group">
+
+				<input type="text" class="login-field" value="" placeholder="prenom" id="login-name" name="prenom">
 				<label class="login-field-icon fui-user" for="login-name"></label>
 
 				</div>
