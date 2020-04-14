@@ -11,16 +11,17 @@ $db_found = mysqli_select_db($db_handle, $database);
 if (isset($_POST['button1'])) {
 	if ($db_found) {
 		$sql = "SELECT * FROM Vendeur WHERE Pseudo  = '$pseudo' AND Email = '$email'";
-				
+
 		$result = mysqli_query($db_handle, $sql);
 //regarder s'il y a de résultat
 		if (mysqli_num_rows($result) == 0) {
 			echo "Vendeur non trouvé";
+			exit();
 		} else {
 			while ($data = mysqli_fetch_assoc($result)) {
-				echo "Pseudo : " . $data['Pseudo'] . "<br>";
-				echo "Email : " . $data['Email'] . "<br>";
-				echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
+				//echo "Pseudo : " . $data['Pseudo'] . "<br>";
+			//	echo "Email : " . $data['Email'] . "<br>";
+			//	echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
 				
 			}
 		}
@@ -31,7 +32,7 @@ if (isset($_POST['button1'])) {
 
 //fermer la connexion
 //mysqli_close($db_handle);
-echo "Database close";
+//echo "Database close";
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,9 +42,28 @@ echo "Database close";
 </head>
 <body>
 
-			
+
 	<h2>Connecté</h2>
-	 <h1>Bienvenue <?php echo $pseudo; ?> !</h1>
+	<h1>Bienvenue <?php echo $pseudo; ?> !</h1>
+
+	<h2>vos items : </h2>
+	<?php
+	if ($db_found) {
+		$ID = " SELECT ID FROM Vendeur WHERE Pseudo  = '$pseudo'";
+		$sql = "SELECT * FROM Item, Vendeur WHERE Vendeur.ID_vendeur  = Item.ID_vendeur AND Pseudo  = '$pseudo'";
+
+		$result = mysqli_query($db_handle, $sql);
+
+		if (mysqli_num_rows($result) == 0) {
+			echo "pas d'item";
+			exit();
+		} else {
+			while ($data = mysqli_fetch_assoc($result)) {	
+				echo "Nom item : " . $data['Item.Nom'] . "<br>";
+			}
+		}
+	}
+	?>
 
 	
 </body>
