@@ -1,9 +1,11 @@
-
-
 .container-fluid{
-	background: linear-gradient(#bbbb8b,white);
-	height: 600px;
+	
+font-family: Arial;
+background-color: #FFFFFF;
+
+
 }
+
 
 .col-sm-12{
 	margin:40px;
@@ -14,6 +16,10 @@
 	text-align: center;
 }
 
+.row{
+	background-color: #bbbbbb;
+	padding: 20px;
+}
 
 
 .col-sm-2{
@@ -109,4 +115,3 @@
 	width: auto;
 
 }
-
