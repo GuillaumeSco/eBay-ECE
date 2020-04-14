@@ -1,4 +1,4 @@
-<?php<?php
+<?php
 $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
 
 //identifier votre BDD
