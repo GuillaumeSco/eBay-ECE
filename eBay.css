@@ -24,6 +24,10 @@ background-color: #FFFFFF;
 	font-family: Arial;
 	color :white;
 	text-align: center;
+	background-color: rgba(16, 141, 179, .3);
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #3498DB;
 }
 
 .row{
