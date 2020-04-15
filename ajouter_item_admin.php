@@ -36,7 +36,7 @@ if (isset($_POST['button2'])) {
 			while ($data = mysqli_fetch_assoc($result)) {
 				echo "Nom_item: " . $data['Nom_item'] . "<br>";
 				echo "Photo_item: " . $data['Photo_item'] . "<br>";
-				header('Location: connexion_vendre.php');
+				header('Location: connexion_Admin.php');
 			}
 		
 	} else {
