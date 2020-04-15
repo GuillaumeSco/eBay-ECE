@@ -9,7 +9,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if (isset($_POST['button1'])) {
 	if ($db_found) {
-		$sql = "SELECT * FROM admin WHERE mdp  = '$mdp'";
+		$sql = "SELECT * FROM admin WHERE mdp_admin  = '$mdp'";
 				
 		$result = mysqli_query($db_handle, $sql);
 //regarder s'il y a de résultat
@@ -18,7 +18,7 @@ if (isset($_POST['button1'])) {
 			exit();
 		} else {
 			while ($data = mysqli_fetch_assoc($result)) {
-				echo "Mot de passe : " . $data['mdp'] . "<br>";				
+				echo "Mot de passe : " . $data['mdp_admin'] . "<br>";				
 			}
 		}
 	} else {
@@ -42,8 +42,8 @@ if (isset($_POST['button1'])) {
 		$resultat = mysqli_query($db_handle, $requete);
 	
 		while ($ligne = $resultat->fetch_assoc()) {
-			echo $ligne['Pseudo'].' '.$ligne['Email'].' ';
-			echo $ligne['Nom'].' '.$ligne['Photo'].'<br>';
+			echo $ligne['Pseudo_vendeur'].' '.$ligne['Email_vendeur'].' ';
+			echo $ligne['Nom_vendeur'].' '.$ligne['Photo_vendeur'].'<br>';
 		}
 		
 		?>

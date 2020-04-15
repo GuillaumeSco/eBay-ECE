@@ -15,16 +15,16 @@ if (isset($_POST['button1'])) {
 	if ($db_found) {
 		$sql = "SELECT * FROM Vendeur";
 		if ($pseudo != "") {
-			$sql .= " WHERE Pseudo = '$pseudo'";
+			$sql .= " WHERE Pseudo_vendeur = '$pseudo'";
 			if ($email != "") {
-				$sql .= " OR Email = '$email'";
+				$sql .= " OR Email_vendeur = '$email'";
 			}
 		}
 		$result = mysqli_query($db_handle, $sql);
 		if (mysqli_num_rows($result) != 0) {
 			echo "vendeur already exists. Duplicate not allowed.";
 		} else {
-			$sql = "INSERT INTO Vendeur(Pseudo, Email, Nom, Photo, Image_fond)
+			$sql = "INSERT INTO Vendeur(Pseudo_vendeur, Email_vendeur, Nom_vendeur, Photo_vendeur, Image_fond)
 			VALUES('$pseudo', '$email', '$nom', '$photo', '$image')";
 			$result = mysqli_query($db_handle, $sql);
 			echo "Add successful. <br>";
