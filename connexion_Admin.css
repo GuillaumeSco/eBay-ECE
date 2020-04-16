@@ -7,11 +7,17 @@ box-sizing: border-box;
 }
 body {
 font-family: Arial;
+background-color: #3498DB;
 padding: 50px;
 }
+
+h1 {
+text-align: center;
+}
+
 .login {
 margin: 20px auto;
-width: 300px;
+width: 550px;
 }
 .login-screen {
 background-color: #FFF;
@@ -30,6 +36,7 @@ text-align: center;
 .control-group {
 margin-bottom: 10px;
 }
+
 
 input {
 text-align: center;
