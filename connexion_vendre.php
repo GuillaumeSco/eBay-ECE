@@ -106,7 +106,7 @@ if (isset($_POST['button1'])) {
 						</tr>
 						<tr>
 							<td>Prix :</td>
-							<td><input type="number" step="0.01" name="prix"></td>
+							<td><input type="number" step="0.01" min="0" name="prix"></td>
 						</tr>
 
 						<tr>
@@ -118,7 +118,7 @@ if (isset($_POST['button1'])) {
 									<label for="vente par enchere"> vente par enchere</label>				
 								</tr>
 								<tr>
-									<td><input type="radio" id="aucun système de vente" name="vente"  value="aucun système de vente" checked>
+									<td><input type="radio" id="aucun système de vente" name="vente"  value="aucun systeme de vente" checked>
 										<label for="aucun système de vente"> aucun système de vente</label>
 									</tr>
 									<tr>
