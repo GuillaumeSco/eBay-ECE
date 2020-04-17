@@ -31,62 +31,87 @@ if (isset($_POST['button1'])) {
 <head>
 	<title>ECE Ebay</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="connexion_vendre.css">
+	<div class="app-title">
+		<h1>Connecté en tant que vendeur</h1>
+	</div>
 </head>
 <body>
 
+	
+	<h1>Bienvenue <?php echo $_SESSION['d']; ?> !</h1><br><br>
 
-	<h2>Connecté en tant que vendeur</h2>
-	<h1>Bienvenue <?php echo $_SESSION['d']; ?> !</h1>
+	<p>Photo de profil, Nom, Image de fond</p><br>
 
-	<h2>vos items : </h2>
-	<?php
-	if ($db_found) {
-		$sql = "SELECT ID_item FROM Item";
-		$result = mysqli_query($db_handle, $sql);
-		if (mysqli_num_rows($result) == 0) {
-			echo "pas d'item";
+
+
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h2>Vos items : </h2>
+			</div>
+			<div class="login-form">
+				<?php
+				if ($db_found) {
+					$sql = "SELECT ID_item FROM Item";
+					$result = mysqli_query($db_handle, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "pas d'item";
 			//exit();
-		} else {
-			while ($data = mysqli_fetch_assoc($result)) {	
-				echo "<form action=supprimer_item_vendeur.php method=post>";
-				echo "<table>";
-				echo "<tr>";
-				echo " <td><input type=radio name=suppr value=". $data['ID_item'] . ">";
+					} else {
+						while ($data = mysqli_fetch_assoc($result)) {	
+							echo "<form action=supprimer_item_vendeur.php method=post>";
+							echo "<table>";
+							echo "<tr>";
+							echo " <td><input type=radio name=suppr value=". $data['ID_item'] . ">";
 				//	"<label for=". $data['ID_item'] . "> ". $data['ID_item'] . "</label>";
-				echo "ID item : " . $data['ID_item'] . "<br>";
-				echo "</tr>";
+							echo "ID item : " . $data['ID_item'] . "<br>";
+							echo "</tr>";
 					//echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
 
-			}
-			echo "<tr></tr>";
-			echo "<td colspan=2 align=center>";
-			
-			echo "<input type=submit name=button3 value=supprimer></td></tr>
-			
-			</table>";
-			echo "</form>";
+						}
+						echo "<tr></tr>";
+						echo "<td colspan=2 align=center>";
+						echo "</table>";
+						echo "<input class=btn btn-primary btn-large btn-block type=submit name=button3 value=supprimer>";
+						echo "</form>";
 
 
 
 
 
-		}
-	}
-	?>
-	<h1>Ajouter un item</h1>
-	<form action="ajouter_item_vendeur.php" method="post">
-		<table>
-			<tr>
-				<td><input type="radio" id="ferraille ou tresor" name="categorie" value="ferraille ou tresor" checked>
-					<label for="ferraille ou tresor"> ferraille ou tresor</label>
-				</tr>
-				<tr>
-					<td><input type="radio" id="bon pour le musee" name="categorie" value="bon pour le musee" checked>
-						<label for="bon pour le musee"> bon pour le musee</label>
-					</tr>
-					<tr>
-						<td><input type="radio" id="accessoire VIP" name="categorie" value="accessoire VIP" checked>
-							<label for="accessoire VIP"> accessoire VIP</label>
+					}
+				}
+				?>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Ajouter un item</h1>
+			</div>
+			<div class="login-form">
+
+				<form action="ajouter_item_vendeur.php" method="post">
+					<table>
+						<tr>
+							<td><label for="ferraille ou trésor"> ferraille ou tresor</label></td>
+							<td><input type="radio" id="ferraille ou tresor" name="categorie" value="ferraille ou tresor" checked></td>
+
+						</tr>
+						<tr>
+							<td><label for="bon pour le musee"> bon pour le musee</label></td>
+							<td><input type="radio" id="bon pour le musee" name="categorie" value="bon pour le musee" checked></td>
+
+						</tr>
+						<tr>
+							<td><label for="accessoire VIP"> accessoire VIP</label></td>
+							<td><input type="radio" id="accessoire VIP" name="categorie" value="accessoire VIP" checked></td>
+							
 						</tr>
 						<tr>
 							<td>Nom :</td>
@@ -98,7 +123,7 @@ if (isset($_POST['button1'])) {
 						</tr>
 						<tr>
 							<td>Description :</td>
-							<td><input type="text" name="description"></td>
+							<td><input type="textarea" name="description"></td>
 						</tr>
 						<tr>
 							<td>Vidéo :</td>
@@ -110,32 +135,36 @@ if (isset($_POST['button1'])) {
 						</tr>
 
 						<tr>
-							<td><input type="radio" id="vente par meilleure offre" name="vente" value="vente par meilleure offre" checked>
-								<label for="vente par meilleure offre"> vente par meilleure offre</label>
-							</tr>
-							<tr>
-								<td><input type="radio" id="vente par enchere" name="vente"  value="vente par enchere" checked>
-									<label for="vente par enchere"> vente par enchere</label>				
-								</tr>
-								<tr>
-									<td><input type="radio" id="aucun système de vente" name="vente"  value="aucun systeme de vente" checked>
-										<label for="aucun système de vente"> aucun système de vente</label>
-									</tr>
-									<tr>
-										<td><input type="checkbox" id="1" name="achat_imm" value="1" checked>
-											<label for="achat immediat"> achat immédiat</label>
-										</tr>
+							<td><label for="vente par meilleure offre"> vente par meilleure offre</label></td>
+							<td><input type="radio" id="vente par meilleure offre" name="vente" value="vente par meilleure offre" checked></td>
+						</tr>
+						<tr>
+							<td><label for="vente par enchere"> vente par enchère</label></td>
+							<td><input type="radio" id="vente par enchere" name="vente"  value="vente par enchere" checked></td>				
+						</tr>
+						<tr>
+							<td><label for="aucun système de vente"> aucun système de vente</label></td>
+							<td><input type="radio" id="aucun système de vente" name="vente"  value="aucun systeme de vente" checked></td>
+						</tr>
+						<tr>
+							<td><label for="achat immediat"> achat immédiat</label></td>
+							<td><input type="checkbox" id="1" name="achat_imm" value="1" checked></td>
+						</tr>
 
 
-										<tr></tr>
-										<tr>
-											<td colspan="2" align="center">
-												<input type="submit" name="button2" value="ajouter">	
-											</td>
-										</tr>
-									</table>
-								</form>
+						<tr></tr>
+						</table>
+
+								<input class="btn btn-primary btn-large btn-block" type="submit" name="button1" value="ajouter">	
+							
+						
+					
+				</form>
+			</div>
+		</div>
+	</div>
 
 
-							</body>
-							</html>
+
+</body>
+</html>
