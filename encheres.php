@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/eBay.css">
 	<link rel="stylesheet" type="text/css" href="css/eBay_item.css">
+	<link rel="shortcut icon" href="images/favicon.ico" />  
 
 	<link rel= "stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -18,7 +19,7 @@
 		<header class="header">
 			<div class="row" style="height:30px;">
 				<div class="col-sm-12">
-					<a href="../index.html">eBay Projet Piscine</a>
+					<a href="index.html">eBay Projet Piscine</a>
 				</div>
 			</div>
 			<div class="row">
@@ -45,12 +46,12 @@
 					</div>
 					<div class="col-sm-2">
 						<li class="titre">
-							<a href="../Vendeur_login.html">Vente <i class="fas fa-piggy-bank"></i></i></a>
+							<a href="Vendeur_login.html">Vente <i class="fas fa-piggy-bank"></i></i></a>
 						</li>
 					</div>
 					<div class="col-sm-2">
 						<li class="titre">
-							<a href="../Acheteur_login.html">Votre Compte <i class="fas fa-balance-scale-right"></i></a>
+							<a href="Acheteur_login.html">Votre Compte <i class="fas fa-balance-scale-right"></i></a>
 						</li>
 					</div>
 					<div class="col-sm-2">
@@ -60,7 +61,7 @@
 					</div>
 					<div class="col-sm-2">
 						<li class="titre">
-							<a href="../Admin_login.html">Admin <i class="fas fa-address-card"></i></a>
+							<a href="Admin_login.html">Admin <i class="fas fa-address-card"></i></a>
 						</li>
 					</div>
 				</ul>
@@ -83,7 +84,7 @@
 					<div class="login">
 						<div class="login-screen">
 							<div class="left">
-								<img src="../images/chaussure.jpg" width="250" height="210">
+								<img src="images/chaussure.jpg" width="250" height="210">
 							</div>
 
 
