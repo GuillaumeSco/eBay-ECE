@@ -149,3 +149,24 @@ width:100%;
 
 height:20px;
 }
+
+.app-title {
+text-align: center;
+font-family: Arial;
+color: #777;
+}
+
+.wrapper {
+background-color: #3498DB;
+padding: 285px;
+}
+
+.index {
+margin: 20px auto;
+width: 200px;
+}
+.index-mid {
+background-color: #FFF;
+padding: 20px;
+border-radius: 7px
+}
