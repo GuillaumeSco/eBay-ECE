@@ -14,16 +14,8 @@ if (isset($_POST['button1'])) {
 		$result = mysqli_query($db_handle, $sql);
 //regarder s'il y a de résultat
 		if (mysqli_num_rows($result) == 0) {
-			
-
-			echo "<SCRIPT>
-        alert('Mauvais mot de passe')
-        window.location.replace('Admin_login.html');
- 		  </SCRIPT>";
-
-			
-			
-			
+			echo "mauvais mot de passe";
+			header('Location: Admin_login.html');
 		} else {
 			while ($data = mysqli_fetch_assoc($result)) {
 				echo "Mot de passe : " . $data['mdp_admin'] . "<br>";				
@@ -87,7 +79,7 @@ if (isset($_POST['button1'])) {
 
 
 				if ($db_found) {
-					$sql = "SELECT ID_item FROM Item";
+					$sql = "SELECT ID_item FROM Item WHERE achete = '0'";
 					$result = mysqli_query($db_handle, $sql);
 					if (mysqli_num_rows($result) == 0) {
 						echo "pas d'item";

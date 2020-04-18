@@ -8,6 +8,7 @@ $video = isset($_POST["video"])? $_POST["video"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 $vente = isset($_POST["vente"])? $_POST["vente"] : "";
 $achat_imm = isset($_POST["achat_imm"])? $_POST["achat_imm"] : "0";
+$pseudo_vend = isset($_POST["pseudo_vend"])? $_POST["pseudo_vend"] : "";
 
 //identifier votre BDD
 $database = "projet";
@@ -17,27 +18,38 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if (isset($_POST['button2'])) {
 	if ($db_found) {
-			//$recID = "SELECT ID_vendeur FROM vendeur WHEN Pseudo_vendeur = '$pseudo'";
-			//$resID = mysqli_query($db_handle, $recID);
-			//$dataID = mysqli_fetch_assoc($resID);
-			$sql = "INSERT INTO item(categorie_item, Nom_item, Photo_item, Description_item, Video_item, Prix_item, vente_item, achat_imm_item)
-			VALUES('$categorie', '$nom', '$photo', '$description', '$video', '$prix', '$vente', '$achat_imm')";
-			$result = mysqli_query($db_handle, $sql);
-			echo "Add successful. <br>";
+
+		$sql2 = "SELECT ID_vendeur FROM vendeur WHERE Pseudo_vendeur = '$pseudo_vend'";
+		$result2 = mysqli_query($db_handle, $sql2);
+		$data2= mysqli_fetch_assoc($result2);
+		$id_vend = $data2['ID_vendeur'];
+		echo "id vend: " . $data2['ID_vendeur'] . "<br>";
+
+	/*	$sql4 = "SELECT Prix_item FROM  item WHERE ID_item = '$id'";
+		$result4 = mysqli_query($db_handle, $sql4);
+		$data4 = mysqli_fetch_assoc($result4);
+		$prix_item =$data4['Prix_item'];
+		echo "var : ".$data4['Prix_item']."";*/
+
+
+		$sql = "INSERT INTO item(categorie_item, Nom_item, Photo_item, Description_item, Video_item, Prix_item, vente_item, achat_imm_item, ID_vendeur)
+		VALUES('$categorie', '$nom', '$photo', '$description', '$video', '$prix', '$vente', '$achat_imm', '$id_vend')";
+		$result = mysqli_query($db_handle, $sql);
+		echo "Add successful. <br>";
 //on afficher le livre ajouté
-			$sql = "SELECT * FROM item";
-			if ($nom != "") {
-				$sql .= " WHERE Nom_item ='$nom'";
-				if ($photo != "") {
-					$sql .= " AND Photo_item ='$photo'";
-				}
+		$sql = "SELECT * FROM item";
+		if ($nom != "") {
+			$sql .= " WHERE Nom_item ='$nom'";
+			if ($photo != "") {
+				$sql .= " AND Photo_item ='$photo'";
 			}
-			$result = mysqli_query($db_handle, $sql);
-			while ($data = mysqli_fetch_assoc($result)) {
-				echo "Nom_item: " . $data['Nom_item'] . "<br>";
-				echo "Photo_item: " . $data['Photo_item'] . "<br>";
-				header('Location: connexion_vendre.php');
-			}
+		}
+		$result = mysqli_query($db_handle, $sql);
+		while ($data = mysqli_fetch_assoc($result)) {
+			echo "Nom_item: " . $data['Nom_item'] . "<br>";
+			echo "Photo_item: " . $data['Photo_item'] . "<br>";
+			//header('Location: connexion_vendre.php');
+		}
 		
 	} else {
 		echo "Database not found";

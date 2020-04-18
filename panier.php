@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<form action="connexion_compte.php" method="post">
+	<form action="pannier2.php" method="post">
 		<a href="index.html">retour</a>
 
 		<div class="login">
@@ -55,16 +55,26 @@
 						<label class="login-field-icon fui-lock" for="login-pass"></label>
 
 					</div>
+			<!--		<?php
+					$id = isset($_POST["custId"])? $_POST["custId"] : "";
+					$database = "projet";
+//connectez-vous de votre BDD
+					$db_handle = mysqli_connect('localhost', 'root', '');
+					$db_found = mysqli_select_db($db_handle, $database);
+					echo"<input type=hidden name=custId value=".$id.">";
+					
+			//	echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
+					?>-->
+
 
 					<input class="btn btn-primary btn-large btn-block" type="submit" name="button1" value="Connexion">
-					
+
+					<a class="login-link" href="#">S'enregistrer ?</a>
 				</div>
 			</div>
 		</div>
 
 	</form>
-	<form action="creation_compte.php" method="post">
-		<input class="btn btn-primary btn-large btn-block" type="submit" name="button1" value="Créer un compte">
-	</form>
+	
 </body>
 </html>
