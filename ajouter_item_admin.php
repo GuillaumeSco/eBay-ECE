@@ -24,6 +24,26 @@ if (isset($_POST['button2'])) {
 			VALUES('$categorie', '$nom', '$photo', '$description', '$video', '$prix', '$vente', '$achat_imm')";
 			$result = mysqli_query($db_handle, $sql);
 			echo "Add successful. <br>";
+
+
+			if ($vente=='vente par enchere') {
+			$sql = "SELECT * FROM item WHERE Nom_item ='$nom' AND Photo_item ='$photo' ";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$id = $data['ID_item'];
+			echo "<form action=ajouter_enchere.php method=post>";
+			echo"<input type=hidden name=custId value=".$id.">"; ?>
+			<tr><td>Prix de l'enchère :</td>
+			<td><input type="float" min="0" step="0.01" name="prix"></td></tr><br>
+			<tr><td>date de fin de l'enchère :</td>
+			<td><input type="date" name="date"></td></tr><br>
+			<?php echo"<input class=btn btn-primary btn-large btn-block type=submit name=button5 value=Ajouter l'enchère>". "<br>";
+			echo "</form>";
+			
+			
+		}
+
+
 //on afficher le livre ajouté
 			$sql = "SELECT * FROM item";
 			if ($nom != "") {
@@ -36,7 +56,7 @@ if (isset($_POST['button2'])) {
 			while ($data = mysqli_fetch_assoc($result)) {
 				echo "Nom_item: " . $data['Nom_item'] . "<br>";
 				echo "Photo_item: " . $data['Photo_item'] . "<br>";
-				header('Location: connexion_Admin.php');
+			//	header('Location: connexion_Admin.php');
 			}
 		
 	} else {

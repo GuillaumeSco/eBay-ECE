@@ -23,7 +23,7 @@ if (isset($_POST['button2'])) {
 		$result2 = mysqli_query($db_handle, $sql2);
 		$data2= mysqli_fetch_assoc($result2);
 		$id_vend = $data2['ID_vendeur'];
-		echo "id vend: " . $data2['ID_vendeur'] . "<br>";
+		//echo "id vend: " . $data2['ID_vendeur'] . "<br>";
 
 	/*	$sql4 = "SELECT Prix_item FROM  item WHERE ID_item = '$id'";
 		$result4 = mysqli_query($db_handle, $sql4);
@@ -35,7 +35,26 @@ if (isset($_POST['button2'])) {
 		$sql = "INSERT INTO item(categorie_item, Nom_item, Photo_item, Description_item, Video_item, Prix_item, vente_item, achat_imm_item, ID_vendeur)
 		VALUES('$categorie', '$nom', '$photo', '$description', '$video', '$prix', '$vente', '$achat_imm', '$id_vend')";
 		$result = mysqli_query($db_handle, $sql);
-		echo "Add successful. <br>";
+	//	echo "Add successful. <br>";
+
+		if ($vente=='vente par enchere') {
+			$sql = "SELECT * FROM item WHERE Nom_item ='$nom' AND Photo_item ='$photo' ";
+			$result = mysqli_query($db_handle, $sql);
+			$data = mysqli_fetch_assoc($result);
+			$id = $data['ID_item'];
+			echo "<form action=ajouter_enchere.php method=post>";
+			echo"<input type=hidden name=custId value=".$id.">"; ?>
+			<tr><td>Prix de l'enchère :</td>
+			<td><input type="float" min="0" step="0.01" name="prix"></td></tr><br>
+			<tr><td>date de fin de l'enchère :</td>
+			<td><input type="date" name="date"></td></tr><br>
+			<?php echo"<input class=btn btn-primary btn-large btn-block type=submit name=button5 value=Ajouter l'enchère>". "<br>";
+			echo "</form>";
+			
+			
+		}
+
+
 //on afficher le livre ajouté
 		$sql = "SELECT * FROM item";
 		if ($nom != "") {
@@ -46,8 +65,8 @@ if (isset($_POST['button2'])) {
 		}
 		$result = mysqli_query($db_handle, $sql);
 		while ($data = mysqli_fetch_assoc($result)) {
-			echo "Nom_item: " . $data['Nom_item'] . "<br>";
-			echo "Photo_item: " . $data['Photo_item'] . "<br>";
+		//	echo "Nom_item: " . $data['Nom_item'] . "<br>";
+		//	echo "Photo_item: " . $data['Photo_item'] . "<br>";
 			//header('Location: connexion_vendre.php');
 		}
 		

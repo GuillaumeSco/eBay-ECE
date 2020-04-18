@@ -246,6 +246,58 @@ if (isset($_POST['button1'])) {
 
 </form>
 
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				
+					<h1>gérer les enchères</h1>
+				
+		<?php			
+if ($db_found) {
+					$sql = "SELECT ID_item FROM Item WHERE achete = '0' AND vente_item = 'vente par enchere'";
+					$result = mysqli_query($db_handle, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "pas d'item";
+			//exit();
+					}
+					while ($data = mysqli_fetch_assoc($result)) {	
+							echo "<form action=gerer_ench_admin.php method=post>";
+							echo "<table>";
+							echo "<tr>";
+							$id = $data['ID_item'];
+							$sql2 = "SELECT * FROM enchere WHERE ID_item = '$id'";
+							$result2 = mysqli_query($db_handle, $sql2);
+							$data2 = mysqli_fetch_assoc($result2);
+							$prix_ac =$data2['Prix_actuel'];
+							$id_ach =$data2['ID_acheteur'];
+							echo"<input type=hidden name=id_ach value=".$id_ach.">";
+							echo"<input type=hidden name=id value=".$id.">";
+				//	"<label for=". $data['ID_item'] . "> ". $data['ID_item'] . "</label>";
+							echo "ID item : " . $data['ID_item'] . "<br>";
+							echo "Prix actuel : " . $prix_ac . "<br>";
+							echo "</tr>";
+					//echo "Photo de profil :". "<img src=".$data['Photo']." />" . "<br>";
+
+						}
+						echo "<tr></tr>";
+						echo "</table>";
+
+						echo "<input class=btn btn-primary btn-large btn-block type=submit name=button3 value='Arreter la vente'>";
+						echo "</form>";
+
+
+
+				}
+					
+?>
+
+			
+		</div>
+	</div>
+</div>
+
+
+
 
 </body>
 </html>
