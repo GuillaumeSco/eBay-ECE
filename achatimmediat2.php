@@ -47,6 +47,8 @@ if (isset($_POST['button1'])) {
 <html>
 <head>
 	<title>ECE Ebay</title>
+	<link href="images/favicon.ico" rel="icon" type="images/x-icon" />
+	<a href="index.html">retour</a>
 	<meta charset="utf-8">
 </head>
 <body>

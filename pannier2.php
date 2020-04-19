@@ -17,6 +17,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 <head>
 	<title>ECE Ebay</title>
 	<a href="index.html">retour</a>
+	<link href="images/favicon.ico" rel="icon" type="images/x-icon" />
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="connexion_Admin.css">
 

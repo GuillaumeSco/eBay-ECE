@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css/login/Vendeur_login.css">
-
+	<link href="images/favicon.ico" rel="icon" type="images/x-icon" />
 	<meta charset="utf-8" />
 	<title> ACHETEUR LOGIN </title>
 

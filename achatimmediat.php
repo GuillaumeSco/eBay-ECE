@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/eBay.css">
 	<link rel="stylesheet" type="text/css" href="css/eBay_item.css">
+	<link href="images/favicon.ico" rel="icon" type="images/x-icon" />
 
 	<link rel= "stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>

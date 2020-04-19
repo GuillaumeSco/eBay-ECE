@@ -5,6 +5,7 @@
 	<title>Ebay ECE</title>
 	<a href="index.html">retour</a>
 	<meta charset="utf-8">
+	<link href="images/favicon.ico" rel="icon" type="images/x-icon" />
 	<link rel="stylesheet" type="text/css" href="ajouter_item_vendeur.css">
 </head>
 <body>
