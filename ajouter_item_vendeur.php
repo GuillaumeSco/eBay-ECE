@@ -1,3 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ebay ECE</title>
+	<a href="index.html">retour</a>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="ajouter_item_vendeur.css">
+</head>
+<body>
+
+<div class="login">
+		<div class="login-screen">
+
 <?php
 //récupérer les données venant de formulaire
 $categorie = isset($_POST["categorie"])? $_POST["categorie"] : "";
@@ -44,10 +58,12 @@ if (isset($_POST['button2'])) {
 			$id = $data['ID_item'];
 			echo "<form action=ajouter_enchere.php method=post>";
 			echo"<input type=hidden name=custId value=".$id.">"; ?>
-			<tr><td>Prix de l'enchère :</td>
-			<td><input type="float" min="0" step="0.01" name="prix"></td></tr><br>
-			<tr><td>date de fin de l'enchère :</td>
-			<td><input type="date" name="date"></td></tr><br>
+			<tr>
+			<td>Prix de l'enchère :
+			<input type="float" min="0" step="0.01" name="prix"><br></td>
+			<td>date de fin de l'enchère :
+			<input type="date" name="date"><br></td>
+			</tr>
 			<?php echo"<input class=btn btn-primary btn-large btn-block type=submit name=button5 value=Ajouter l'enchère>". "<br>";
 			echo "</form>";
 			
@@ -77,3 +93,8 @@ if (isset($_POST['button2'])) {
 //fermer la connexion
 mysqli_close($db_handle);
 ?>
+
+</div>
+</div>
+</body>
+</html>

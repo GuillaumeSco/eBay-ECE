@@ -39,7 +39,9 @@ if (isset($_POST['button1'])) {
 <html>
 <head>
 	<title>ECE Ebay</title>
+	<a href="index.html">retour</a>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="connexion_compte.css">
 </head>
 <body>
 
@@ -54,12 +56,17 @@ if (isset($_POST['button1'])) {
 	$adresse = $data2['Adresse_acheteur'];
 
 	?>
-
+	<div class="app-title">
 	<h2>Connecté à votre compte</h2>
+	</div>
 
 
 	<h1>Bienvenue <?php echo $nom ." ". $prenom ; ?> !</h1>
-	<h3>informations sur votre compte acheteur</h3>
+
+	<div class="login">
+		<div class="login-screen">
+		<h3>informations sur votre compte acheteur</h3>
+		
 	<p><?php 
 	echo "Nom : ". $nom ."<br>";
 	echo "Prénom : ".$prenom ."<br>";
@@ -110,7 +117,8 @@ if (isset($_POST['button1'])) {
 
 	?></p>
 
-
+</div>
+</div>
 
 
 </body>
