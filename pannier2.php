@@ -16,6 +16,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 <html>
 <head>
 	<title>ECE Ebay</title>
+	<a href="index.html">retour</a>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="connexion_Admin.css">
 
@@ -30,7 +31,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 			<h1>Bienvenue <?php echo $nom; ?> !</h1>
 			<div class="login-form">
 
-				
+
 
 
 
@@ -72,7 +73,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 							$result4 = mysqli_query($db_handle, $sql4);
 	//	$data4 = mysqli_fetch_assoc($result4);
 							while ($data4 = mysqli_fetch_assoc($result4)) {
-								
+
 								echo "<form action=gerer_m_offre_acheteur.php method=post>";
 
 
